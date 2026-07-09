@@ -1,151 +1,93 @@
-# Student-Management-System
+# 🎓 Student Management System
 
-student-management-system/
+A full-stack Student Management System built using **React.js, Node.js, Express.js, PostgreSQL**, JWT Authentication, Role-Based Access Control (RBAC), and Docker.
+
+---
+
+# 📌 Features
+
+- 🔐 JWT Authentication
+- 👨‍🎓 Student Management
+- 👨‍🏫 Teacher Management
+- 📚 Course Management
+- 📝 Attendance Management
+- 📊 Marks Management
+- 📈 Dashboard & Analytics
+- 👥 Role-Based Access (Admin, Teacher, Student)
+- 📂 File Upload Support
+- 🐳 Docker Deployment
+- 📱 Responsive UI
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- React Router
+- Axios
+- Context API
+- Tailwind CSS / Bootstrap
+
+## Backend
+
+- Node.js
+- Express.js
+- JWT Authentication
+- bcrypt
+- Multer
+
+## Database
+
+- PostgreSQL
+
+## DevOps
+
+- Docker
+- Docker Compose
+- Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+Student-Management-System/
 │
-├── frontend/                        # React (Vite)
+├── frontend/
 │   ├── public/
-│   │   ├── favicon.ico
-│   │   └── logo.png
-│   │
 │   ├── src/
 │   │   ├── assets/
-│   │   │   ├── images/
-│   │   │   ├── icons/
-│   │   │   └── styles/
-│   │   │
 │   │   ├── components/
-│   │   │   ├── common/
-│   │   │   │   ├── Button.jsx
-│   │   │   │   ├── Input.jsx
-│   │   │   │   ├── Modal.jsx
-│   │   │   │   ├── Loader.jsx
-│   │   │   │   └── Table.jsx
-│   │   │   │
-│   │   │   ├── layout/
-│   │   │   │   ├── Navbar.jsx
-│   │   │   │   ├── Sidebar.jsx
-│   │   │   │   ├── Footer.jsx
-│   │   │   │   └── DashboardLayout.jsx
-│   │   │   │
-│   │   │   ├── auth/
-│   │   │   │   ├── LoginForm.jsx
-│   │   │   │   └── RegisterForm.jsx
-│   │   │   │
-│   │   │   ├── student/
-│   │   │   ├── teacher/
-│   │   │   ├── course/
-│   │   │   ├── attendance/
-│   │   │   └── marks/
-│   │   │
+│   │   ├── layouts/
 │   │   ├── pages/
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Students.jsx
-│   │   │   ├── StudentDetails.jsx
-│   │   │   ├── Teachers.jsx
-│   │   │   ├── Courses.jsx
-│   │   │   ├── Attendance.jsx
-│   │   │   ├── Marks.jsx
-│   │   │   ├── Profile.jsx
-│   │   │   ├── Settings.jsx
-│   │   │   └── NotFound.jsx
-│   │   │
 │   │   ├── routes/
-│   │   │   ├── AppRoutes.jsx
-│   │   │   ├── PrivateRoute.jsx
-│   │   │   └── RoleProtectedRoute.jsx
-│   │   │
 │   │   ├── services/
-│   │   │   ├── api.js
-│   │   │   ├── authService.js
-│   │   │   ├── studentService.js
-│   │   │   ├── teacherService.js
-│   │   │   ├── attendanceService.js
-│   │   │   ├── marksService.js
-│   │   │   └── courseService.js
-│   │   │
 │   │   ├── context/
-│   │   │   ├── AuthContext.jsx
-│   │   │   └── ThemeContext.jsx
-│   │   │
 │   │   ├── hooks/
-│   │   │   ├── useAuth.js
-│   │   │   └── useFetch.js
-│   │   │
 │   │   ├── utils/
-│   │   │   ├── constants.js
-│   │   │   ├── validators.js
-│   │   │   ├── helpers.js
-│   │   │   └── storage.js
-│   │   │
 │   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
+│   │   └── main.jsx
 │   │
 │   ├── package.json
-│   ├── vite.config.js
-│   ├── .env
 │   └── Dockerfile
 │
-│
-├── backend/                         # Node.js + Express
+├── backend/
 │   ├── config/
-│   │   ├── db.js
-│   │   └── jwt.js
-│   │
 │   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── studentController.js
-│   │   ├── teacherController.js
-│   │   ├── courseController.js
-│   │   ├── attendanceController.js
-│   │   └── marksController.js
-│   │
 │   ├── middleware/
-│   │   ├── authMiddleware.js
-│   │   ├── roleMiddleware.js
-│   │   ├── errorMiddleware.js
-│   │   └── validateMiddleware.js
-│   │
 │   ├── models/
-│   │   ├── Student.js
-│   │   ├── Teacher.js
-│   │   ├── Course.js
-│   │   ├── Attendance.js
-│   │   └── Marks.js
-│   │
 │   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── studentRoutes.js
-│   │   ├── teacherRoutes.js
-│   │   ├── courseRoutes.js
-│   │   ├── attendanceRoutes.js
-│   │   └── marksRoutes.js
-│   │
 │   ├── services/
-│   │   ├── authService.js
-│   │   ├── studentService.js
-│   │   └── teacherService.js
-│   │
 │   ├── utils/
-│   │   ├── generateToken.js
-│   │   ├── password.js
-│   │   └── logger.js
-│   │
 │   ├── database/
-│   │   ├── schema.sql
-│   │   ├── seed.sql
-│   │   └── migrations/
-│   │
 │   ├── uploads/
-│   │
 │   ├── app.js
 │   ├── server.js
 │   ├── package.json
 │   ├── .env
 │   └── Dockerfile
-│
 │
 ├── database/
 │   ├── ER_Diagram.png
@@ -158,8 +100,206 @@ student-management-system/
 │   ├── Screenshots/
 │   └── Architecture.png
 │
-├── .gitignore
 ├── docker-compose.yml
-├── README.md
+├── .gitignore
 ├── LICENSE
-└── package.json (optional if using workspaces)
+└── README.md
+```
+
+---
+
+# 🗄 Database Design
+
+## Main Tables
+
+- Users
+- Students
+- Teachers
+- Courses
+- Enrollments
+- Attendance
+- Marks
+
+---
+
+# 👤 User Roles
+
+## Admin
+
+- Manage Students
+- Manage Teachers
+- Manage Courses
+- Assign Teachers
+- View Reports
+
+### Teacher
+
+- Manage Attendance
+- Upload Marks
+- View Students
+- Update Profile
+
+### Student
+
+- View Profile
+- View Attendance
+- View Marks
+- View Courses
+
+---
+
+# 🔐 Authentication Flow
+
+```
+Login
+   │
+   ▼
+Verify Credentials
+   │
+   ▼
+Generate JWT Token
+   │
+   ▼
+Store Token
+   │
+   ▼
+Protected Routes
+```
+
+---
+
+# 📡 REST API
+
+## Authentication
+
+```
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/auth/profile
+```
+
+## Students
+
+```
+GET    /api/students
+GET    /api/students/:id
+POST   /api/students
+PUT    /api/students/:id
+DELETE /api/students/:id
+```
+
+## Teachers
+
+```
+GET
+POST
+PUT
+DELETE
+```
+
+## Courses
+
+```
+GET
+POST
+PUT
+DELETE
+```
+
+## Attendance
+
+```
+GET
+POST
+PUT
+DELETE
+```
+
+## Marks
+
+```
+GET
+POST
+PUT
+DELETE
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/Student-Management-System.git
+```
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+---
+
+# 🐳 Docker
+
+```bash
+docker-compose up --build
+```
+
+---
+
+# 📷 Screenshots
+
+```
+docs/
+└── Screenshots/
+```
+
+- Login
+- Dashboard
+- Student Module
+- Teacher Module
+- Attendance
+- Marks
+
+---
+
+# 📜 Future Improvements
+
+- Email Notifications
+- QR Attendance
+- Parent Portal
+- Timetable Module
+- Fees Management
+- AI Analytics
+- Mobile Application
+
+---
+
+# 👨‍💻 Author
+
+**Shruti Meshram**
+
+B.Tech Computer Science & Technology
+
+IIEST Shibpur
+
+2026 Graduate
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
